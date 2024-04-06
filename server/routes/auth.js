@@ -3,7 +3,7 @@ const User = require("../models/User");
 const { hashPassword, comparePassword } = require("../controllers/hash");
 const { generateToken } = require("../controllers/tokens");
 const passport = require('passport');
-
+const {sendMail} = require("../controllers/verify");
 
 
 router.get('/newlogin', passport.authenticate('google', { 
@@ -63,6 +63,10 @@ router.post("/register", async (req, res) => {
 			password: hashedPassword,
 		});
 		await user.save();
+		
+		const mailResponse = await sendMail(email, name, user.id);
+
+
 		const token = generateToken(
 			{ id: user.id, email: user.email, role: user.role, name: user.name },
 			"5m"
@@ -75,6 +79,7 @@ router.post("/register", async (req, res) => {
 			name: user.name,
 			role: user.role,
 			token: token,
+			mailResponse: mailResponse,
 		});
 	} catch (err) {
 		console.log(err);

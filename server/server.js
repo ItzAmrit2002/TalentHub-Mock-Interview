@@ -26,10 +26,13 @@ app.use("/api/auth", authRoutes);
 //import middleware
 const authMiddleware = require("./middlewares/authMiddleware");
 
-
+//just for testing
 app.get("/", authMiddleware, async(req, res) => {
 	res.send("Hello, World!");
 });
+
+const verifyRoutes = require("./routes/verifications");
+app.use("/api/email", verifyRoutes);
 
 //connect to db
 connectDB();
