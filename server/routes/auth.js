@@ -71,6 +71,8 @@ router.post("/register", async (req, res) => {
 			{ id: user.id, email: user.email, role: user.role, name: user.name },
 			"5m"
 		);
+
+		
 		res.cookie("token", token, { httpOnly: true });
 
 		res.status(200).json({

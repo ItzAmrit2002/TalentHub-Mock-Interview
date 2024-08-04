@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/User");
+const path = require("path");
 
 router.get("/verify/:id", async (req, res) => {
     try {
@@ -10,7 +11,8 @@ router.get("/verify/:id", async (req, res) => {
         }
         user.isVerified = true;
         await user.save();
-        res.status(200).send("Email verified, you can now login!");
+        console.log(path.join(__dirname, "../public/verification.html"))
+        res.status(200).sendFile(path.join(__dirname, "../public/verification.html"));
     } catch (err) {
         console.log(err);
     }

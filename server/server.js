@@ -3,15 +3,17 @@ const { connectDB } = require("./utils/db");
 const app = express();
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
-const {connectPassport} = require("./utils/Provider");
+const { connectPassport } = require("./utils/Provider");
 dotenv.config();
 
-const cors = require('cors');
+const cors = require("cors");
 
-app.use(cors({
-  origin: 'http://localhost:3000', // or your client origin
-  credentials: true
-}));
+app.use(
+	cors({
+		origin: "http://localhost:3000", // or your client origin
+		credentials: true,
+	})
+);
 const port = 8000;
 app.use(cookieParser());
 app.use(express.json());
@@ -27,7 +29,7 @@ app.use("/api/auth", authRoutes);
 const authMiddleware = require("./middlewares/authMiddleware");
 
 //just for testing
-app.get("/", authMiddleware, async(req, res) => {
+app.get("/", authMiddleware, async (req, res) => {
 	res.send("Hello, World!");
 });
 
