@@ -8,6 +8,7 @@ const nextConfig = {
 			"www.ismartrecruit.com",
 			"cdn.shopify.com",
 			"media.istockphoto.com",
+			"assets.aceternity.com"
 		],
 	},
 };
