@@ -40,13 +40,13 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 								</div>
 
 								<p className="font-Lily_Script_One italic ">
-									"Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+									&quot;Lorem ipsum dolor, sit amet consectetur adipisicing elit.
 									Magnam tenetur ea dignissimos, aliquam consequuntur assumenda
 									illo possimus fugiat soluta autem maxime, est exercitationem
 									optio molestiae nihil earum a quas delectus distinctio
 									voluptatibus quis! Libero excepturi cumque quod officiis
 									voluptas corrupti blanditiis necessitatibus vero, porro
-									similique labore, facilis laborum ad deleniti!"
+									similique labore, facilis laborum ad deleniti!&quot;
 								</p>
 								{/* <TypographyBlockquote/> */}
 								<div className="flex sm:justify-between text-center items-center w-[90%] sm:flex-row flex-col justify-center sm:gap-0 gap-5">

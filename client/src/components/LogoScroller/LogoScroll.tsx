@@ -28,14 +28,14 @@ const LogoScroll = () => {
 				<MarqueeGroup>
 					{row1.map((el, index) => (
 						<ImageGroup key={index}>
-							<Image src={el} />
+							<Image src={el} alt="" />
 						</ImageGroup>
 					))}
 				</MarqueeGroup>
 				<MarqueeGroup>
 					{row1.map((el, index) => (
 						<ImageGroup key={index}>
-							<Image src={el} />
+							<Image src={el} alt=""/>
 						</ImageGroup>
 					))}
 				</MarqueeGroup>
@@ -44,14 +44,14 @@ const LogoScroll = () => {
 				<MarqueeGroup2>
 					{row2.map((el, index) => (
 						<ImageGroup key={index}>
-							<Image src={el} />
+							<Image src={el} alt=""/>
 						</ImageGroup>
 					))}
 				</MarqueeGroup2>
 				<MarqueeGroup2>
 					{row2.map((el, index) => (
 						<ImageGroup key={index}>
-							<Image src={el} />
+							<Image src={el} alt=""/>
 						</ImageGroup>
 					))}
 				</MarqueeGroup2>
